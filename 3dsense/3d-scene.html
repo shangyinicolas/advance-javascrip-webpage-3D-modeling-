@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating 3D Cube</title>
+    <link rel="stylesheet" href="css/3d-scene.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="icon-bar">
+    <a href="#" onclick="playAudio()">Open Music</i></a> 
+    <a href="#" onclick="pauseAudio()">Close Music</i></a> 
+    <a href="#" onclick="opendoor()">Door</i></a> 
+    <a href="#" onclick="welcome()">Welc</i></a>  
+    <a href="#" onclick="reset()">Dancer</i></a>  
+  </div>
+
+   <audio id="audio">
+    <source src="image/bensound-cute.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="sky"> </div>
+  <img src="image/cloud.png" alt="" id="cloud1">
+  <img src="image/cloud.png" alt="" id="cloud2">
+  <img src="image/cloud.png" alt="" id="cloud3">
+
+<div class="scene">
+
+
+
+
+    <div class="object head">
+      <img class="face front" src="image/groundside.png">
+      <img class="face back" src="image/groundside.png">
+      <img class="face left" src="image/groundside.png">
+      <img class="face right" src="image/groundside.png">
+      <img class="face top" src="image/groundface.png">
+      <img class="face bottom" src="image/groundface.png">
+    </div> 
+
+    <div class="object wood1">
+      <img class="face front" src="image/woodside.png">
+      <img class="face back" src="image/woodside.png">
+      <img class="face left" src="image/woodside.png">
+      <img class="face right" src="image/woodside.png">
+      <img class="face top" src="image/woodtop.png">
+      <img class="face bottom" src="image/woodtop.png">
+    </div>
+
+     <div class="object wood2">
+      <img class="face front" src="image/woodside.png">
+      <img class="face back" src="image/woodside.png">
+      <img class="face left" src="image/woodside.png">
+      <img class="face right" src="image/woodside.png">
+      <img class="face top" src="image/woodtop.png">
+      <img class="face bottom" src="image/woodtop.png">
+    </div> 
+
+    <div class="object wood3">
+      <img class="face front" src="image/woodside.png">
+      <img class="face back" src="image/woodside.png">
+      <img class="face left" src="image/woodside.png">
+      <img class="face right" src="image/woodside.png">
+      <img class="face top" src="image/woodtop.png">
+      <img class="face bottom" src="image/woodtop.png">
+    </div> 
+
+    <div class="object tent">
+      <img class="face front" src="image/tentbefore.png">
+      <img class="face back" id="frontdoor" src="image/tentbefore.png" onclick="opendoor()">
+      <img class="face left" id="display" src="image/tentside.png" onclick="display()">
+      <img class="face right" src="image/tentside.png">
+      <img class="face top" src="image/tentop.png">
+      <img class="face bottom" src="image/tentop1.png">
+    </div>
+    
+
+    <div class="object flag">
+      <img class="face front" src="image/flag.jpg" onclick="welcome()"  />
+  </div>
+
+  <div class="object title">
+    <img class="face front" src="image/stick.png">
+    <img class="face back" src="image/stick.png">
+    <img class="face left" src="image/stick.png">
+    <img class="face right" src="image/stick.png">
+    <img class="face top" src="image/flagtop.png">
+    <img class="face bottom" src="image/flagtop.png">
+    <img class="face inner" id="title1" src="image/titlebefore.png" >
+    <img class="face outter" id="title2" src="image/titlebefore.png" >
+  </div> 
+
+  <div class="object dancer">
+    <img class="face front" src="image/dancer.png"  />
+</div>
+<div class="object snowman">
+  <img class="face front" src="image/snow-gf394af2e8_1280.png"  width="200" height="300" onclick="playAudio()" />
+</div>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/3d-scene.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(rgb(91, 192, 231), #ccc);
+  perspective:1000px ;
+}
+
+.icon-bar {
+  width: 120px;
+  position:absolute;
+  background-color: rgb(79, 172, 121);
+  z-index: 9999;
+  top: 5%;
+  left: 5%;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 24px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+#cloud1 {
+  width: 5vw;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  animation: cloud-float 5s 9s linear infinite;
+  transform: translateX(-20vw);
+  -webkit-user-select: none; 
+}
+#cloud2 {
+  width: 8vw;
+  position: absolute;
+  top: 30vh;
+  left: 0;
+  animation: cloud-float 12s 3s linear infinite;
+  transform: translateX(-23vw);
+  -webkit-user-select: none; 
+}
+#cloud3 {
+  width: 20vw;
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  animation: cloud-float 6s 6s linear infinite;
+  transform: translateX(-60vw);
+  -webkit-user-select: none; 
+}
+
+#sky {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  background: #39c;
+  animation: day-night 10s linear infinite;
+}
+
+@keyframes day-night {
+  0% {
+      opacity: 0;
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes cloud-float {
+  0% {
+      transform: translateX(-20vw);
+  }
+
+  100% {
+      transform: translateX(100vw);
+  }
+}
+
+
+.face {
+  position: absolute;
+}
+
+.object, .scene {
+  user-select: none;
+  transform-style: preserve-3d;
+}
+.scene, .object, .face {
+  --rX: 0deg; --rY: 0deg; --rZ: 0deg;
+  --tX: 0px; --tY: 20px; --tZ: 0px;
+  transform: rotateX(var( --rX)) rotateY(var( --rY)) rotateZ(var( --rZ))
+  translate3d(var( --tX),var( --tY),var( --tZ));
+
+}
+.object { position: absolute; }
+
+.scene { width: 800px; height: 500px; }
+
+.head {
+  transform: translate3d( 150px, 390px, -150px );
+
+}
+.wood1{
+  transform: rotateY(90deg) translate3d( 350px, 500px, -223px );
+}
+
+.wood2
+{
+  transform: rotateY(90deg) translate3d( -50px, 500px, -223px );
+}
+.wood3
+{
+  transform:rotateY(90deg) translate3d( 139px, 150px, -223px );
+}
+.title{
+  transform:rotateY(90deg)  translate3d( -250px, 250px, 60px );
+  
+}
+@keyframes swing {
+  0% { transform:rotateX(deg) rotateY(90deg)  translate3d( -250px, 250px, 60px ) }
+  100% { transform:rotateX(30deg) rotateY(90deg)  translate3d( -250px, 250px, 60px ) }
+  } 
+
+
+
+.flag {
+  --tX: 225px;
+}
+
+.flag .front {
+ 
+}
+
+.dancer {
+  --tX: 350px;
+  --tY: 300px;
+  --tZ: 100px;
+
+  transition: transform 1s ease
+  
+}
+.dancer.front {
+ 
+}
+.snowman {
+  --tX: -200px;
+  --tY: 130px;
+  --tZ: -500px;
+  width: 200px;
+  height: 300px;
+  
+  
+}
+.snowman.front {
+ 
+}
+
+
+.head .front {transform: rotateY(0deg)  translate3d(-400px,50px,400px);}
+.head .back {transform: rotateY(180deg) translate3d(400px,50px,400px);}
+.head .top {transform: rotateX(90deg) translate3d(-400px,0px,350px);}
+.head .bottom {transform: rotateX(-90deg) translate3d(-400px,0px,-310px);}
+.head .left {transform: rotateY(-90deg) translate3d(0px,50px,800px);}
+.head .right {transform: rotateY(90deg) translate3d(0px,50px,0px);}
+
+
+.wood1 .front {transform: rotateY(90deg) rotateX(90deg) translate3d(-286px,-150px,120px);}
+.wood1 .back {transform: rotateY(90deg) rotateX(-90deg) translate3d(-287px,150px,-81px);}
+.wood1 .top {transform: rotateX(180deg) translate3d(-97px,243px,-86px);}
+.wood1 .bottom {transform: rotateX(-180deg) translate3d(-96px,241px,-486px);}
+.wood1 .left {transform: rotateY(-90deg) translate3d(286px,-100px,170px);}
+.wood1 .right {transform: rotateY(90deg) translate3d(-287px,-101px,-130px);}
+
+.wood2 .front {transform: rotateY(90deg) rotateX(90deg) translate3d(-286px,-150px,120px);}
+.wood2 .back {transform: rotateY(90deg) rotateX(-90deg) translate3d(-287px,150px,-81px);}
+.wood2 .top {transform: rotateX(180deg) translate3d(-97px,243px,-86px);}
+.wood2 .bottom {transform: rotateX(-180deg) translate3d(-96px,241px,-486px);}
+.wood2 .left {transform: rotateY(-90deg) translate3d(286px,-100px,170px);}
+.wood2 .right {transform: rotateY(90deg) translate3d(-287px,-101px,-130px);}
+
+.wood3 .front {transform: rotateY(90deg) rotateX(90deg) translate3d(-286px,-150px,120px);}
+.wood3 .back {transform: rotateY(90deg) rotateX(-90deg) translate3d(-287px,150px,-81px);}
+.wood3 .top {transform: rotateX(180deg) translate3d(-97px,243px,-86px);}
+.wood3 .bottom {transform: rotateX(-180deg) translate3d(-96px,241px,-486px);}
+.wood3 .left {transform: rotateY(-90deg) translate3d(286px,-100px,170px);}
+.wood3 .right {transform: rotateY(90deg) translate3d(-287px,-101px,-130px);}
+
+.tent .front {transform: rotateY(90deg) rotateX(360deg) translate3d(183px,-21px,-408px);}
+.tent .back {transform: rotateY(90deg) rotateX(0deg) translate3d(186px,-18px,-8px);}
+.tent .top {transform: rotateX(300deg) translate3d(-139px,265px,-140px);}
+.tent .bottom {transform: rotateX(63deg) translate3d(-138px,-68px,-44px);}
+.tent .left {transform: rotateY(0deg) translate3d(-138px,156px,-387px);}
+.tent .right {transform: rotateY(0deg) translate3d(-138px,150px,9px);}
+
+
+.title .front {transform: rotateY(90deg) rotateX(90deg)  translate3d(0px,10px,49px);}
+.title .back {transform: rotateY(90deg) translate3d(1px,40px,19px);}
+.title .top {transform: rotateX(180deg) translate3d(150px,39px,149px);}
+.title .bottom {transform: rotateX(180deg) translate3d(150px,39px,-151px);}
+.title .left {transform: rotateY(90deg) rotateX(90deg) translate3d(0px,8px,-51px);}
+.title .right {transform: rotateY(90deg) translate3d(0px,41px,-1px);}
+.title .inner {transform: rotateY(90deg) translate3d(2px,-39px,18px);}
+.title .outter {transform: rotateY(270deg) translate3d(2px,-40px,0px);}
+
+.button1 .front {transform: rotateY(0deg)  translate3d(-10px,0px,10px);}
+.button1 .back {transform: rotateY(180deg) translate3d(10px,0px,10px);}
+.button1 .top {transform: rotateX(90deg) translate3d(-10px,0px,10px);}
+.button1 .bottom {transform: rotateX(-90deg) translate3d(-10px,0px,-10px);}
+.button1 .left {transform: rotateY(-90deg) translate3d(0px,0px,19px);}
+.button1 .right {transform: rotateY(90deg) translate3d(0px,0px,-2px);}
